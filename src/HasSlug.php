@@ -150,7 +150,6 @@ trait HasSlug
     {
         return (bool) static::where($this->slugOptions->slugField, $slug)
             ->where($this->getKeyName(), '!=', $this->getKey() ?? '0')
-            ->withoutGlobalScopes()
             ->first();
     }
 
